@@ -1,0 +1,112 @@
+:root{
+    --text: #2c3e50;
+    --text2: #003285;
+    --light-blue:#cbe6fb;
+    --gray: #6c748d;
+    --dark-yellow: #f2de28;
+    --light-yellow: #FFF6A8;
+    --lighty-yellow: #FFFCE0;
+    --shadow: 2px 2px 4px black;
+}
+
+@font-face {
+    font-family: '8-bit';
+    src: url('assets/8-bit-pusab.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'game';
+    src: url('assets/gGameTC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: '8-bit', 'Arial', sans-serif;
+    background-image: url("assets/bluestar.gif"); 
+    background-position: center; 
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: var(--shadow);
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 10px;
+    text-shadow: var(--shadow);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+    text-shadow: var(--shadow);
+}
+
+input, select {
+    font-family: 'game', 'Arial', sans-serif;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--azul-clarito);
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text2);
+}
+
+button {
+    font-family: '8-bit', 'Arial', sans-serif;
+    background: var(--lighty-yellow);
+    color: var(--text2);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+     transition: all 0.3s;
+    margin: 10px auto;
+    display: block;
+    width: 80%;
+    max-width: 250px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(to bottom, var(--light-yellow), var(--dark-yellow));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
