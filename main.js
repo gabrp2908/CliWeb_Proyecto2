@@ -266,22 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500);
     }
 
-    function highlightCorrectAnswer(correctAnswer) {
-        document.querySelectorAll('.answer-btn').forEach(button => {
-            if (button.textContent === correctAnswer) {
-                button.classList.add('correct');
-            }
-        });
-    }
-
-    function highlightIncorrectAnswer(incorrectAnswer) {
-        document.querySelectorAll('.answer-btn').forEach(button => {
-            if (button.textContent === incorrectAnswer) {
-                button.classList.add('incorrect');
-            }
-        });
-    }
-
     function nextQuestion() {
         currentQuestionIndex++;
         
