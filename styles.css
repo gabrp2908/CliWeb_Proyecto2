@@ -2,6 +2,7 @@
     --text: #2c3e50;
     --text2: #003285;
     --light-blue:#cbe6fb;
+    --blue: #0059ffc5;
     --gray: #6c748d;
     --dark-yellow: #f2de28;
     --light-yellow: #FFF6A8;
@@ -79,11 +80,11 @@ input, select {
     font-family: 'game', 'Arial', sans-serif;
     width: 100%;
     padding: 12px;
-    border: 2px solid var(--azul-clarito);
+    border: 2px solid var(--light-blue);
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.9);
+    background: whi;
     color: var(--text2);
 }
 
@@ -96,7 +97,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 15px;
-     transition: all 0.3s;
+    transition: all 0.3s;
     margin: 10px auto;
     display: block;
     width: 80%;
@@ -109,4 +110,35 @@ button:hover {
     background: linear-gradient(to bottom, var(--light-yellow), var(--dark-yellow));
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #658bff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.music-toggle:hover {
+    background: linear-gradient(to bottom, #2a75ff, #003494c5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hidden {
+    display: none !important;
 }
