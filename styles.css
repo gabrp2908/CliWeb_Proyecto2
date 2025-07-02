@@ -2,7 +2,9 @@
     --text: #2c3e50;
     --text2: #003285;
     --light-blue:#cbe6fb;
+    --baby-blue: #658bff;
     --blue: #0059ffc5;
+    --dark-blue: #003494c5;
     --gray: #6c748d;
     --dark-yellow: #f2de28;
     --light-yellow: #FFF6A8;
@@ -59,7 +61,7 @@ h2 {
     color: white;
     margin-bottom: 30px;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     text-shadow: var(--shadow);
     padding-bottom: 10px;
 }
@@ -134,9 +136,37 @@ button:hover {
 }
 
 .music-toggle:hover {
-    background: linear-gradient(to bottom, #2a75ff, #003494c5);
+    background: linear-gradient(to bottom, var(--baby-blue), var(--dark-blue));
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.answer-btn {
+    transition: all 0.3s;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+    background-color: var(--light-blue);
+    color: var(--text2);
+}
+
+.answer-btn:hover {
+    background-color: var(--baby-blue);
+    color: white;
+}
+
+.answer-btn.correct {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+}
+
+.answer-btn.incorrect {
+    background-color: #ff5555 !important;
+    color: white !important;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255, 85, 85, 0.7);
 }
 
 .hidden {

@@ -8,7 +8,9 @@
 </head>
 <body>
     <!-- Botón de música en la esquina superior derecha -->
-   <button id="music-toggle" class="music-toggle">🔊</button>
+   <button id="music-toggle" class="music-toggle">
+    <img src="assets/music-off.png" id="music-icon">
+    </button>
 
     <div class="container">
         <!-- Pantalla inicial -->
@@ -49,6 +51,45 @@
             <div class="loader"></div>
             <p>Cargando preguntas...</p>
         </div>
+
+         <!-- Pantalla de juego (se crea dinámicamente) -->
+        <div id="game-screen" class="screen hidden">
+            <div class="game-header">
+                <div class="player-info">
+                    <span id="player-name-display"></span>
+                    <span id="score">Puntuación: 0</span>
+                </div>
+                <div class="progress">Pregunta <span id="current-question">1</span> de <span id="total-questions">10</span></div>
+                <div class="timer-container">
+                    <div class="timer-bar">
+                        <div class="timer-progress" id="timer-progress"></div>
+                    </div>
+                    <span id="time-left">20</span>s
+                </div>
+            </div>
+            <div class="question-container">
+                <h2 id="question-text"></h2>
+                <div id="answers-container" class="answers"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de resultados -->
+        <div id="results-screen" class="screen hidden">
+            <h1>Resultados</h1>
+            <div class="results-container">
+                <p>Jugador: <span id="result-player-name"></span></p>
+                <p>Puntuación total: <span id="result-score"></span></p>
+                <p>Respuestas correctas: <span id="result-correct"></span>/<span id="result-total"></span></p>
+                <p>Porcentaje de aciertos: <span id="result-percentage"></span>%</p>
+                <p>Tiempo promedio por pregunta: <span id="result-avg-time"></span>s</p>
+            </div>
+            <div class="results-actions">
+                <button id="play-again">Jugar otra vez</button>
+                <button id="change-settings">Cambiar configuracion</button>
+                <button id="quit-game">Salir</button>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
