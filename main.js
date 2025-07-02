@@ -144,20 +144,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const question = questions[currentQuestionIndex];
         answerSelected = false;
         startTime = new Date().getTime();
-        
-        document.getElementById('player-name-display').textContent = gameSettings.playerName;
-        document.getElementById('current-question').textContent = currentQuestionIndex + 1;
-        document.getElementById('total-questions').textContent = questions.length;
-        document.getElementById('score').textContent = `Puntuacion: ${score}`;
-        
+
+       const gameHeader = document.querySelector('.game-header');
+        if (gameHeader) {
+            gameHeader.innerHTML = `
+                <div class="player-row">
+                    <span class="player-info" id="player-name-display">${gameSettings.playerName}</span>
+                    <span class="score-info" id="score">Puntuacion: ${score}</span>
+                </div>
+                <div class="question-progress-row">
+                    <span class="progress">Pregunta <span id="current-question">${currentQuestionIndex + 1}</span> de <span id="total-questions">${questions.length}</span></span>
+                </div>
+                <div class="timer-container">
+                    <div class="timer-bar">
+                        <div class="timer-progress" id="timer-progress"></div>
+                    </div>
+                    <span id="time-left">20</span>s
+                </div>
+            `;
+        }
+
         document.getElementById('question-text').textContent = question.question;
-        
+
         const answersContainer = document.getElementById('answers-container');
         answersContainer.innerHTML = '';
-        
+
         const allAnswers = [...question.incorrect_answers, question.correct_answer];
         shuffleArray(allAnswers);
-        
+
         allAnswers.forEach(answer => {
             const answerButton = document.createElement('button');
             answerButton.className = 'answer-btn';
@@ -165,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             answerButton.addEventListener('click', () => selectAnswer(answer));
             answersContainer.appendChild(answerButton);
         });
-        
+
         startTimer();
     }
 
@@ -311,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         musicToggle.addEventListener('click', toggleMusic);
 
         document.getElementById('play-again').addEventListener('click', () => {
+            resultsScreen.classList.add('hidden'); // Oculta la pantalla de resultados
             startNewGame(gameSettings);
         });
 
